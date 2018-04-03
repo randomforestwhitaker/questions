@@ -18,20 +18,22 @@ def resolver(xs: List[Int]): Double = {
 }
 */
 
-// preliminary implementation
-// TODOs: 
-// [1] Resolve type mismatch in `average` implementation [2] so many vars :(
-def resolver(xs: List[Int]): Int = {
-    var n = 0
-    var inc = 0
-    var index = xs.length
-    var accum = new ListBuffer[Int]()
-    var x = 0
-    for (x <- xs if (x != -999 && isNonNegative(x) && inc <= index)) {
-        accum += x 
-        inc += 1
-    }
-    accum.sum / accum.length // can use avg function once type mismatch resolved
+// TODO: 
+// [2] so many vars :(
+def resolver(xs: List[Int]): Double = {
+    xs match {
+        case Nil => Double.NaN 
+        case xs =>
+            var inc = 0
+            var index = xs.length
+            var accum = new ListBuffer[Int]()
+            var x = 0
+            for (x <- xs if (x != -999 && isNonNegative(x) && inc <= index)) {
+                accum += x 
+                inc += 1
+            }
+            average(accum) 
+        }
 }
 
 def isNonNegative(x: Int): Boolean = {
