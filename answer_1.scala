@@ -1,5 +1,5 @@
 def resolver(xs: List[Int]): Double = {
-    val cleaned = xs.takeWhile(_ != -999).takeWhile(_ >= 0)
+    val cleaned = xs.takeWhile(_ != -999).filter(_ >= 0)
     average(cleaned)
 }
 
