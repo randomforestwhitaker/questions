@@ -12,4 +12,4 @@ return the average of all non-negative numbers. */
 [2]
 /* Given an int and a list of elements, return the list of elements based on the following conditions: 
    positive int: take x elements from the head and move them to the tail of the list
-   negative int: take x elements tail and move them to the head of the list */
+   negative int: take x elements from the tail and move them to the head of the list */
